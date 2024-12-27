@@ -1,0 +1,48 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: hotelup-employee
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hotelup-employee-deployment
+  labels:
+    app: hotelup-employee
+  namespace: hotelup-employee
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hotelup-employee
+  template:
+    metadata:
+      name: hotelup-employee
+      labels:
+        app: hotelup-employee
+    spec:
+      containers:
+        - name: hotelup-employee
+          image: wiaz/hotelup.employee:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 5002
+              protocol: TCP
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hotelup-employee-service
+  labels:
+    app: hotelup-employee
+  namespace: hotelup-employee
+spec:
+    selector:
+        app: hotelup-employee
+    ports:
+        - protocol: TCP
+          port: 5002
+          targetPort: 5002
+    type: LoadBalancer
+      

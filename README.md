@@ -1,14 +1,14 @@
-# HotelUp - Information service
-![dockerhub_badge](https://github.com/Wiaz24/HotelUp.Information/actions/workflows/dockerhub.yml/badge.svg)
+# HotelUp - Employee service
+![dockerhub_badge](https://github.com/Wiaz24/HotelUp.Employee/actions/workflows/dockerhub.yml/badge.svg)
 
-This service should expose endpoints on port `5001` starting with:
+This service should expose endpoints on port `5002` starting with:
 ```http
-/api/information/
+/api/employee/
 ```
 
 ## Healthchecks
 Health status of the service should be available at:
 ```http
-/api/information/_health
+/api/employee/_health
 ```
 and should return 200 OK if the service is running, otherwise 503 Service Unavailable.
