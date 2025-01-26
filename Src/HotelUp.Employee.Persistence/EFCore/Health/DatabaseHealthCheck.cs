@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 
-namespace HotelUp.Employee.Persistence.EF.Health;
+namespace HotelUp.Employee.Persistence.EFCore.Health;
 
 public class DatabaseHealthCheck : IHealthCheck
 {
