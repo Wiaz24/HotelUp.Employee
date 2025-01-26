@@ -6,8 +6,8 @@ public static class Extensions
 {
     public static IServiceCollection AddRepositories(this IServiceCollection services)
     {
-        services.AddMemoryCache();
-        // Add repositories here
+        services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+        services.AddScoped<IUserRepository, CognitoUserRepository>();
         return services;
     }
 }

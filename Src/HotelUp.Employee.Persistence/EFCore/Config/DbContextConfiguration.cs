@@ -14,6 +14,8 @@ internal sealed class DbContextConfiguration
         builder.HasValueObject(x => x.FirstName);
         builder.HasValueObject(x => x.LastName);
         builder.HasValueObject(x => x.Email);
+        builder.HasIndex(x => x.Email)
+            .IsUnique();
         builder.HasValueObject(x => x.PhoneNumber);
         builder.Property(x => x.Role);
     }

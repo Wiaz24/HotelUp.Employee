@@ -18,6 +18,12 @@ public class EmployeeRepository : IEmployeeRepository
             .FirstOrDefaultAsync(x => x.Id == id);
     }
 
+    public Task<Entities.Employee?> GetByEmailAsync(string email)
+    {
+        return _dbContext.Employees
+            .FirstOrDefaultAsync(x => x.Email == email);
+    }
+
     public Task<List<Entities.Employee>> GetAllAsync()
     {
         return _dbContext.Employees.ToListAsync();

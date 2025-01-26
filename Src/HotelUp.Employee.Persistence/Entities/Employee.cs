@@ -5,7 +5,7 @@ namespace HotelUp.Employee.Persistence.Entities;
 
 public class Employee
 {
-    public required Guid Id { get; init; }
+    public required Guid Id { get; set; }
     public required FirstName FirstName { get; init; }
     public required LastName LastName { get; init; }
     public required Email Email { get; init; }
