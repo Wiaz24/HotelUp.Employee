@@ -6,7 +6,7 @@ This service should expose endpoints on port `5002` starting with:
 /api/employee/
 ```
 
-## Healthchecks
+## Health checks
 Health status of the service should be available at:
 ```http
 /api/employee/_health

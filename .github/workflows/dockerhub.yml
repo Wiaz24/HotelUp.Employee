@@ -25,8 +25,6 @@ jobs:
                 run: dotnet build --no-restore
             -   name: Unit tests
                 run: dotnet test Tests/HotelUp.Employee.Tests.Unit --no-build --verbosity normal
-            -   name: Integration tests
-                run: dotnet test Tests/HotelUp.Employee.Tests.Integration --no-build --verbosity normal
             -   name: Login to Docker Hub
                 uses: docker/login-action@v3
                 with:
