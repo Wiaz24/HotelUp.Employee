@@ -44,7 +44,8 @@ public class EmployeeService : IEmployeeService
         var employeeCreatedEvent = new EmployeeCreatedEvent
         {
             Id = employee.Id,
-            Role = employee.Role
+            Role = employee.Role,
+            Email = employee.Email
         };
         await _bus.Publish(employeeCreatedEvent);
         return employee.Id;
